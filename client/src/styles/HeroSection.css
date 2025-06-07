@@ -1,0 +1,101 @@
+/* HeroSection.css */
+
+/* Glitch Text Effect */
+.glitch-effect {
+  position: relative;
+  color: white;
+  font-weight: 900;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.glitch-effect::before,
+.glitch-effect::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  right: 0;
+  opacity: 0.8;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch 2s infinite ease-in-out;
+}
+
+.glitch-effect::before {
+  animation-delay: 0.2s;
+  color: #00f0ff;
+  z-index: -1;
+  text-shadow: -2px 0 #00f0ff;
+}
+
+.glitch-effect::after {
+  animation-delay: 0.4s;
+  color: #ff00f7;
+  z-index: -2;
+  text-shadow: 2px 0 #ff00f7;
+}
+
+@keyframes glitch {
+  0% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: translate(-2px, -2px);
+  }
+  5% {
+    clip: rect(16px, 9999px, 70px, 0);
+    transform: translate(2px, 2px);
+  }
+  10% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: translate(-2px, -2px);
+  }
+  15% {
+    clip: rect(12px, 9999px, 50px, 0);
+    transform: translate(2px, 2px);
+  }
+  20% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: translate(0, 0);
+  }
+}
+
+/* Responsive font sizes */
+@media (min-width: 768px) {
+  .glitch-effect {
+    font-size: 6rem;
+  }
+}
+
+/* Button pulse animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px 5px rgba(99, 102, 241, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px 10px rgba(99, 102, 241, 1);
+  }
+}
+
+/* Only run animations if user has NOT requested reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  .glitch-effect::before,
+  .glitch-effect::after {
+    animation-play-state: running;
+  }
+
+  .pulse-button {
+    animation: pulse-glow 2s infinite ease-in-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch-effect::before,
+  .glitch-effect::after,
+  .pulse-button {
+    animation: none !important;
+  }
+}

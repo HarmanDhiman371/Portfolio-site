@@ -1,15 +1,12 @@
-import './App.css';
-import Navbar from "./components/Navbar";
-import { BrowserRouter } from "react-router-dom";
-import Body from "./components/Body";
+import React from 'react';
+import HeroSection from './components/HeroSection';
+
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Navbar />
-        <Body/>
-      </div>
-    </BrowserRouter>
+    <>
+      <HeroSection />
+      {/* You can add other components here */}
+    </>
   );
 }
 
