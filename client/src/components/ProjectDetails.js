@@ -10,7 +10,7 @@ const Projects = () => {
         "A full-featured online store with cart functionality, user authentication, and Stripe payment processing. Built with React, Node.js, and MongoDB.",
       tags: ["React", "Node.js", "MongoDB", "Redux"],
       deployLink: "https://journioo-travelling.netlify.app/",
-      previewImage: "/journio.png", // Correct public path
+      previewImage: "/journio.png",
     },
     {
       id: 2,
@@ -18,11 +18,11 @@ const Projects = () => {
       description:
         "Productivity application with drag-and-drop interface, real-time updates, and team collaboration features. Uses React, Firebase, and Material UI.",
       tags: ["React", "Firebase", "Material UI"],
-      deployLink: "https://example-taskmanager.com",
-      previewImage: "/taskmanager-preview.jpg",
+      deployLink: "https://shoe-stack-ez52.vercel.app/",
+      previewImage: "/shoestack.png",
     },
     {
-      id: 4,
+      id: 3,
       name: "Portfolio Website",
       description:
         "Responsive personal portfolio showcasing projects with interactive elements. Built with React and custom animations.",
@@ -45,11 +45,24 @@ const Projects = () => {
         {/* iPad Display */}
         <div className="ipad-display">
           <div className="ipad-frame">
+            <div className="ipad-camera"></div>
             <div
               className={`ipad-screen ${
                 viewMode === "live" ? "live-view" : ""
               }`}
             >
+              <div className="view-mode-indicator">
+                {['preview', 'details', 'live'].map((mode) => (
+                  <span 
+                    key={mode}
+                    className={viewMode === mode ? 'active' : ''}
+                    onClick={() => setViewMode(mode)}
+                  >
+                    {mode.charAt(0).toUpperCase() + mode.slice(1)}
+                  </span>
+                ))}
+              </div>
+
               {viewMode === "preview" && (
                 <div className="project-preview">
                   <h3>{activeProject.name}</h3>
@@ -58,11 +71,6 @@ const Projects = () => {
                       <img
                         src={activeProject.previewImage}
                         alt={`${activeProject.name} preview`}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "contain",
-                        }}
                       />
                     ) : (
                       <p>No preview available</p>
