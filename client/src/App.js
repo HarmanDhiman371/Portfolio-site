@@ -1,13 +1,19 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HeroSection from './components/HeroSection';
 import Projects from './components/ProjectDetails';
+import Navbar from './components/Navbar';
+
 function App() {
   return (
-    <>
-      <HeroSection />
-      <Projects/>
-      {/* You can add other components here */}
-    </>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HeroSection />} />
+        <Route path="/projects" element={<Projects />} />
+        {/* Add more routes if needed */}
+      </Routes>
+    </Router>
   );
 }
 

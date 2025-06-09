@@ -1,56 +1,80 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import './Navbar.css'; // Optional: Add custom styles for the navbar
 
-// const Navbar = () => {
-//     return (
-//         <nav className="navbar">
-//             <div className="navbar-logo">
-//                 <Link to="/">MyPortfolio</Link>
-//             </div>
-//             <ul className="navbar-links">
-//                 <li>
-//                     <Link to="/">Home</Link>
-//                 </li>
-//                 <li>
-//                     <Link to="/about">About</Link>
-//                 </li>
-//                 <li>
-//                     <Link to="/projects">Projects</Link>
-//                 </li>
-//                 <li>
-//                     <Link to="/contact">Contact</Link>
-//                 </li>
-//             </ul>
-//         </nav>
-//     );
-// };
-
-// export default Navbar;
-import react from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
+
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+    setMobileMenuOpen(false);
+  };
+
   return (
-    <nav className="navbar">
-      <div className="nav-logo">
-        <Link to="/">MyPortfolio</Link>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""} ${mobileMenuOpen ? "mobile-open" : ""}`}>
+      <div className="nav-container">
+        <div className="nav-logo">
+          <Link to="/" onClick={() => handleLinkClick("home")}>
+            <span className="logo-text">Harman</span>
+            <span className="logo-dot"></span>
+          </Link>
+        </div>
+
+        <div className="nav-links-container">
+          <ul className="nav-links">
+            {[
+              { path: "/", name: "Home", id: "home" },
+              { path: "/projects", name: "Projects", id: "projects" },
+              { path: "/education", name: "Education", id: "education" },
+              { path: "/about", name: "About", id: "about" },
+            ].map((link) => (
+              <li key={link.id}>
+                <Link
+                  to={link.path}
+                  className={`nav-link ${activeLink === link.id ? "active" : ""}`}
+                  onClick={() => handleLinkClick(link.id)}
+                >
+                  {link.name}
+                  <span className="link-underline"></span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="nav-actions">
+            <a
+              href="#contact"
+              className="btn-contact"
+              onClick={() => handleLinkClick("contact")}
+            >
+              Contact Me
+            </a>
+          </div>
+        </div>
+
+        <button
+          className="mobile-menu-button"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <div className={`menu-line ${mobileMenuOpen ? "open" : ""}`}></div>
+          <div className={`menu-line ${mobileMenuOpen ? "open" : ""}`}></div>
+          <div className={`menu-line ${mobileMenuOpen ? "open" : ""}`}></div>
+        </button>
       </div>
-      <ul className="nav-links">
-        <li>
-          <Link to="/" >Home</Link>
-        </li>
-        <li>
-          <Link to="/">Projects</Link>
-        </li>
-        <li>
-          <Link to="/">Education</Link>
-        </li>
-        <li>
-          <Link to="/">About Me</Link>
-        </li>
-      </ul>
     </nav>
   );
 };
+
 export default Navbar;
