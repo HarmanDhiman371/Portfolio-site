@@ -602,11 +602,15 @@
     gap: 0.3rem;
   }
   
+  
   .separator {
     display: none;
   }
   
   .hero-image {
     max-width: 280px;
+  }
+  .highlight-name{
+    bottom: 10px;
   }
 }

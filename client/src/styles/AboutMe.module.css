@@ -272,6 +272,7 @@
   .aboutButtons {
     flex-direction: column;
     gap: 15px;
+    width: 87%;
   }
   
   .btn {
