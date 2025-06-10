@@ -1,6 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaPaperPlane } from "react-icons/fa";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
@@ -58,6 +58,7 @@ const Navbar = () => {
               className="btn-contact"
               onClick={() => handleLinkClick("contact")}
             >
+              <FaPaperPlane className="contact-icon" />
               Contact Me
             </a>
           </div>
