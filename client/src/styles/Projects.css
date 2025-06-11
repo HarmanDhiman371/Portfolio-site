@@ -1,15 +1,16 @@
-/* Projects Section */
+/* Projects Section - Dark Theme */
 .projects-section {
   padding: 5rem 5%;
-  background-color: var(--bg-light);
+  background-color: var(--bg-darker);
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
   padding-top: 0;
+  color: var(--text-dark);
 }
 
 .section-title {
   font-size: 2.5rem;
-  color: var(--text-dark);
+  color: var(--text-light);
   margin-bottom: 3rem;
   text-align: center;
 }
@@ -46,17 +47,19 @@
 }
 
 .ipad-frame {
-  background: white;
+  background: var(--card-bg);
   border-radius: 40px;
   padding: 15px;
   box-shadow: 
-    0 0 0 10px #1a1a1a,
-    0 0 0 13px #3a3a3a,
-    0 20px 40px rgba(0, 0, 0, 0.2);
+    0 0 0 10px rgba(15, 23, 42, 0.8),
+    0 0 0 13px rgba(99, 102, 241, 0.3),
+    0 20px 40px rgba(0, 0, 0, 0.3);
   position: relative;
   min-height: 400px;
   height: 100%;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
 }
 
 .ipad-camera {
@@ -66,13 +69,14 @@
   transform: translateX(-50%);
   width: 10px;
   height: 10px;
-  background: #1a1a1a;
+  background: var(--primary-color);
   border-radius: 50%;
   z-index: 10;
+  box-shadow: 0 0 5px var(--primary-color);
 }
 
 .ipad-screen {
-  background: #f5f5f7;
+  background: var(--bg-dark);
   border-radius: 15px;
   overflow: hidden;
   height: 88%;
@@ -81,6 +85,7 @@
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
+  border: 1px solid rgba(99, 102, 241, 0.1);
 }
 
 .ipad-screen.live-view {
@@ -100,7 +105,8 @@
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s ease;
-  background: rgba(0,0,0,0.05);
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--text-dark);
 }
 
 .view-mode-indicator span.active {
@@ -109,7 +115,7 @@
 }
 
 .view-mode-indicator span:hover:not(.active) {
-  background: rgba(0,0,0,0.1);
+  background: rgba(99, 102, 241, 0.2);
 }
 
 /* Project Views */
@@ -143,14 +149,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: var(--card-bg);
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 1rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   max-height: 220px;
   min-height: 220px;
   transition: all 0.3s ease;
+  border: 1px solid rgba(99, 102, 241, 0.1);
 }
 
 .preview-image-container img {
@@ -194,7 +201,7 @@
   width: 100%;
   height: 100%;
   border: none;
-  background: white;
+  background: var(--bg-dark);
   position: absolute;
   top: 0;
   left: 0;
@@ -205,21 +212,24 @@
   top: 15px;
   left: 15px;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(15, 23, 42, 0.9);
   padding: 8px 16px;
   border-radius: 20px;
   border: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.2s ease;
+  color: var(--text-dark);
+  border: 1px solid rgba(99, 102, 241, 0.2);
 }
 
 .project-live .back-button:hover {
-  background: white;
+  background: var(--primary-color);
+  color: white;
   transform: translateX(-3px);
 }
 
@@ -232,7 +242,7 @@
 }
 
 .project-item {
-  background: white;
+  background: var(--card-bg);
   border-radius: 15px;
   padding: 1.5rem;
   cursor: pointer;
@@ -240,16 +250,19 @@
   border: 2px solid transparent;
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(99, 102, 241, 0.1);
 }
 
 .project-item:hover {
   transform: translateY(-7px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
 .project-item.active {
   border-color: var(--primary-color);
-  background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(58, 12, 163, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.2) 0%, rgba(58, 12, 163, 0.2) 100%);
 }
 
 .project-item.active::before {
@@ -264,7 +277,7 @@
 }
 
 .project-item h3 {
-  color: var(--text-dark);
+  color: var(--text-light);
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
   transition: color 0.3s ease;
@@ -288,17 +301,20 @@
 
 .tech-tag,
 .project-tags-mini span {
-  background-color: rgba(67, 97, 238, 0.1);
+  background-color: rgba(67, 97, 238, 0.2);
   color: var(--primary-color);
   padding: 0.3rem 0.8rem;
   border-radius: 50px;
   font-weight: 500;
   transition: all 0.2s ease;
+  border: 1px solid rgba(99, 102, 241, 0.3);
 }
 
 .tech-tag:hover {
   transform: translateY(-2px);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  background-color: var(--primary-color);
+  color: white;
 }
 
 .tech-tag {
@@ -311,7 +327,7 @@
 }
 
 .more-tags {
-  background-color: var(--text-light) !important;
+  background-color: var(--primary-color) !important;
   color: white !important;
 }
 
@@ -354,18 +370,18 @@
 .btn-primary {
   background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   color: white;
-  box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+  box-shadow: 0 4px 15px rgba(67, 97, 238, 0.4);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+  box-shadow: 0 6px 20px rgba(67, 97, 238, 0.6);
 }
 
 .btn-secondary {
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
-  background: white;
+  background: transparent;
 }
 
 .btn-secondary:hover {

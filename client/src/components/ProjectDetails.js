@@ -5,19 +5,19 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      name: "E-Commerce App",
+      name: "J0URNIO",
       description:
-        "A full-featured online store with cart functionality, user authentication, and Stripe payment processing. Built with React, Node.js, and MongoDB.",
-      tags: ["React", "Node.js", "MongoDB", "Redux"],
+        "Journio is a modern, user-friendly travel website designed to simplify and enhance your travel planning experience. Whether you dream of exploring distant countries or planning a weekend getaway, Journio provides everything you need—from destination discovery to flight bookings—on one seamless platform.",
+      tags: ["HTML", "Node.js", "MongoDB", "Stripe" , "Gemini chat bot"],
       deployLink: "https://journioo-travelling.netlify.app/",
       previewImage: "/journio.png",
     },
     {
       id: 2,
-      name: "Task Manager Pro",
+      name: "ShoeStack",
       description:
-        "Productivity application with drag-and-drop interface, real-time updates, and team collaboration features. Uses React, Firebase, and Material UI.",
-      tags: ["React", "Firebase", "Material UI"],
+        "ShoeStack is a sleek and modern e-commerce platform for trendy and premium footwear. Designed with a clean user interface, it offers a seamless shopping experience, showcasing the latest shoe collections with smooth navigation, category filters, and responsive design. Perfect for fashion-conscious users looking to explore and purchase the best shoes online.",
+      tags: ["React", "Node js", "SQL"],
       deployLink: "https://shoe-stack-ez52.vercel.app/",
       previewImage: "/shoestack.png",
     },
@@ -27,7 +27,7 @@ const Projects = () => {
       description:
         "Responsive personal portfolio showcasing projects with interactive elements. Built with React and custom animations.",
       tags: ["React", "GSAP", "Responsive Design"],
-      deployLink: "https://example-portfolio.com",
+      deployLink: "https://portfolio-site-phi-six.vercel.app/",
       previewImage: "/portfolio-preview.jpg",
     },
   ];

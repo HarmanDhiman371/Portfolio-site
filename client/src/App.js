@@ -4,6 +4,8 @@ import HeroSection from './components/HeroSection';
 import Projects from './components/ProjectDetails';
 import Navbar from './components/Navbar';
 import AboutMe from './components/AboutMe';
+import Footer from './components/Footer';
+import Education from './components/Education';
 function App() {
   return (
     <Router>
@@ -12,9 +14,10 @@ function App() {
         <Route path="/" element={<HeroSection />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<AboutMe />} />
-
-        {/* Add more routes if needed */}
+        <Route path="/education" element={<Education />} />
+       
       </Routes>
+      <Footer/>
     </Router>
   );
 }

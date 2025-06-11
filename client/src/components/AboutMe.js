@@ -30,10 +30,10 @@ const AboutMe = () => {
   }, []);
 
   const skills = [
-    { name: 'Web Development', percent: '90%' },
-    { name: 'React', percent: '85%' },
+    { name: 'Web Development', percent: '80%' },
+    { name: 'React', percent: '80%' },
     { name: 'JavaScript', percent: '80%' },
-    { name: 'UI/UX Design', percent: '75%' },
+    { name: 'JAVA', percent: '85%' },
     { name: 'Node.js', percent: '70%' },
   ];
 
@@ -56,14 +56,12 @@ const AboutMe = () => {
           <div className={styles.aboutText}>
             <h3 className={styles.fadeInUp}>I'm a passionate web developer</h3>
             <p className={styles.fadeInUp}>
-              Hello! I'm John Doe, a professional web developer with over 5 years of experience 
-              in creating beautiful, functional, and user-friendly websites and applications. 
-              I specialize in React, JavaScript, and modern frontend technologies.
+              Hello! I'm Harmanjeet singh, Currently pursuing my B.E. in Computer Science at Chitkara University.
+              I specialize in React, JavaScript,  modern frontend and backend technologies. I have Strong Problem Solving skills
+
             </p>
             <p className={styles.fadeInUp}>
-              My journey in web development started when I was in college, and since then 
-              I've worked with various startups and established companies to bring their 
-              digital ideas to life.
+             My journey in web development began during my time in college, where I’ve been building projects that turn creative ideas into functional digital experiences. Along the way, I’ve worked on personal and collaborative projects that have helped me sharpen my skills and explore real-world applications of web technologies.
             </p>
 
             <div className={styles.skills}>
