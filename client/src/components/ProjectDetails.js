@@ -28,7 +28,7 @@ const Projects = () => {
         "Responsive personal portfolio showcasing projects with interactive elements. Built with React and custom animations.",
       tags: ["React", "GSAP", "Responsive Design"],
       deployLink: "https://portfolio-site-phi-six.vercel.app/",
-      previewImage: "/portfolio-preview.jpg",
+      previewImage: "/logo.png",
     },
   ];
 

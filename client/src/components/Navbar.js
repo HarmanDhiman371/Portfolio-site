@@ -54,7 +54,7 @@ const Navbar = () => {
 
           <div className="nav-actions">
             <a
-              href="#contact"
+              href="/contact"
               className="btn-contact"
               onClick={() => handleLinkClick("contact")}
             >

@@ -15,7 +15,7 @@ const Education = () => {
     {
       id: 2,
       degree: "Senior Secondary (12th Grade)",
-      institution: "Govt. Senior Secondary School, Bahadurgarh",
+      institution: "Govt. Senior Secondary School, Bahadargarh",
       year: "2021 - 2022",
       description: "Completed with 93% in Non-Medical stream (PCM).",
       percentage: "93%",

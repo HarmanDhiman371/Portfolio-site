@@ -574,6 +574,9 @@
   .image-frame {
     transform: none !important;
   }
+  .highlight-name{
+    bottom: 10px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -589,6 +592,9 @@
   
   .hero-image {
     max-width: 350px;
+  }
+  .highlight-name{
+    bottom: 10px;
   }
 }
 

@@ -47,7 +47,7 @@ const AboutMe = () => {
         <div className={styles.aboutContent}>
           <div className={styles.aboutImage}>
             <img 
-              src="https://via.placeholder.com/400x500" 
+              src="/cc.png" 
               alt="Profile" 
               className={styles.fadeInUp}
             />
